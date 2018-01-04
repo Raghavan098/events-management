@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'userpage/index'
+
   get 'events/index'
 
   root 'events#index'
