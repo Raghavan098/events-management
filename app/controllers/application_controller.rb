@@ -7,5 +7,12 @@ class ApplicationController < ActionController::Base
       userpage_index_url
     end
   end
+  def after_sign_up_path_for(resource)
+    if current_user.is_admin == true
+      root_path
+    else
+      userpage_index_url
+    end
+  end
   before_action :authenticate_user!
 end
